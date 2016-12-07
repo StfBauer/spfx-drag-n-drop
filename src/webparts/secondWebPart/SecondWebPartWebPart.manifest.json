@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "2a36c545-b6d7-4a37-84f8-57bbc74e2272",
+  "alias": "SecondWebPartWebPart",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "2a36c545-b6d7-4a37-84f8-57bbc74e2272",
+    "group": { "default": "Under Development" },
+    "title": { "default": "Second Drag and Drop enabled Web part" },
+    "description": { "default": "Second webpart that is drag and drop enabled" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "SecondWebPart"
+    }
+  }]
+}

@@ -1,0 +1,7 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "libraryName": "spfx-drag-n-drop",
+    "libraryId": "73dcff24-39f4-4de7-9a82-a008d8608e71",
+    "framework": "react"
+  }
+}

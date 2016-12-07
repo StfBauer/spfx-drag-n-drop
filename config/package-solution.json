@@ -1,0 +1,10 @@
+{
+  "solution": {
+    "name": "spfx-drag-n-drop-client-side-solution",
+    "id": "73dcff24-39f4-4de7-9a82-a008d8608e71",
+    "version": "1.0.0.0"
+  },
+  "paths": {
+    "zippedPackage": "solution/spfx-drag-n-drop.spapp"
+  }
+}

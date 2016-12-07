@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "99366763-6605-466d-8da8-133e183b7b13",
+  "alias": "FirstWebPartWebPart",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "99366763-6605-466d-8da8-133e183b7b13",
+    "group": { "default": "Under Development" },
+    "title": { "default": "First Drag and Drop enabled Web part" },
+    "description": { "default": "First webpart that allows drag and drop" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "FirstWebPart"
+    }
+  }]
+}
