@@ -1,7 +1,7 @@
 # SPFX Sample - Drag and Drop elements between web parts
 This sample demonstrates how items can be moved from one web part to another just by using the [HTML5 drag and drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) and ReactJS.
 
-[image]
+![Drag and drop to other web part](/assets/spfx-drag-drop.jpg?raw=true)
 
 ## Installation
 This sample is built with the [SharePoint Framework SPFX Drop 6](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-Drop-6). To install simply execute:
