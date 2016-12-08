@@ -25,6 +25,7 @@ export default class FirstWebPartWebPart extends BaseClientSideWebPart<IFirstWeb
       description: this.properties.description
     });
 
+    // Create a new instance of the DropBox container
     const myDropBox = React.createElement(DragNDrop.DragNDropContainer, {
       items: [
         { title: "EAT" },
@@ -38,9 +39,6 @@ export default class FirstWebPartWebPart extends BaseClientSideWebPart<IFirstWeb
 
     // add drop box to UI
     ReactDom.render(myDropBox, this.domElement);
-    console.log("TIIIIIIIIIS");
-    console.log(this);
-    console.log("TIIIIIIIIIS");
 
   }
 

@@ -19,7 +19,6 @@ export class DragNDropContainer extends React.Component<any, any> {
     render() {
 
         let index = 0;
-        console.log(this.state);
 
         return (
             <div className="dropbox"
@@ -85,10 +84,6 @@ export class DragNDropItem extends React.Component<any, any> {
         this.itemData = itemData;
         this.parentComp = props.parentList;
 
-        console.log(props.parentList);
-        // this.handleDrag = props.children.drag;
-        // console.log(props.children);
-
     }
 
     render() {
@@ -123,18 +118,8 @@ export class DragNDropItem extends React.Component<any, any> {
 
     }
 
-    handleDragEnd(event) {
-        console.log("Drag ended");
-        console.log(this);
-    }
-
-
-
     // Check if drop was successful or not
     handleWasDraged(event) {
-
-        console.log("Was drop successful?");
-        console.log(event.dataTransfer.getData("data"));
 
         if (event.dataTransfer.dropEffect !== "none") {
             console.log(this);
