@@ -54,7 +54,6 @@ export class DragNDropContainer extends React.Component<any, any> {
         let data = null;
 
         data = JSON.parse(event.dataTransfer.getData("data"));
-        console.log(data);
 
         var newState = this.state;
         newState.items.push(data);
@@ -122,8 +121,6 @@ export class DragNDropItem extends React.Component<any, any> {
     handleWasDraged(event) {
 
         if (event.dataTransfer.dropEffect !== "none") {
-            console.log(this);
-            console.log(this.parentComp);
 
             var currentItem = this.itemData;
             var newState = {
@@ -138,10 +135,6 @@ export class DragNDropItem extends React.Component<any, any> {
             })
 
             newState.items = items;
-
-            console.log(this.parentComp.state.items);
-            console.log("New State");
-            console.log(newState);
 
             this.parentComp.setState(newState);
 
