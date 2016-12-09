@@ -18,6 +18,29 @@ export class DragNDropContainer extends React.Component<any, any> {
 
     }
 
+    // Hanlde Drag over events
+    handleDragOver(event) {
+
+        event.preventDefault();
+        event.dataTransfer.dropEffect = "move";
+
+    }
+
+    // Handle Drop event
+    handleDrop(event) {
+
+        event.preventDefault();
+
+        let data = null;
+
+        data = JSON.parse(event.dataTransfer.getData("application/json"));
+
+        var newState = this.state;
+        newState.items.push(data);
+        this.setState(newState);
+
+    }
+
     render() {
 
         let index = 0;
@@ -40,28 +63,6 @@ export class DragNDropContainer extends React.Component<any, any> {
         )
     }
 
-    // Hanlde Drag over events
-    handleDragOver(event) {
-
-        event.preventDefault();
-        event.dataTransfer.dropEffect = "move";
-
-    }
-
-    // Handle Drop event
-    handleDrop(event) {
-
-        event.preventDefault();
-
-        let data = null;
-
-        data = JSON.parse(event.dataTransfer.getData("data"));
-
-        var newState = this.state;
-        newState.items.push(data);
-        this.setState(newState);
-
-    }
 
 }
 
@@ -87,24 +88,15 @@ export class DragNDropItem extends React.Component<any, any> {
 
     }
 
-    render() {
-        this.state = JSON.stringify(this.itemData);
-        return (
-            <div className="dropbox-item" ref="item" draggable data-title={this.itemData.title}
-                onDragStart={this.handleDragStart.bind(this)}
-                onDragEnd={this.handleWasDraged.bind(this)}>
-                {this.itemData.title}
-            </div>
-        )
-    }
-
     // Handle the start of the dragging action
     handleDragStart(event) {
 
         let itemData = this.itemData;
 
-        event.dataTransfer.setData("data", JSON.stringify(itemData));
+        event.dataTransfer.setData("application/json", JSON.stringify(itemData));
+        event.dataTransfer.allowEffect = "move";
         event.dataTransfer.dropEffect = "move";
+
 
         // remove element
         let newItemsState = this.parentComp.state.items.filter(function (obj) {
@@ -132,7 +124,7 @@ export class DragNDropItem extends React.Component<any, any> {
             // newState.items = newState.items.filter(function(obj){
             //     return obj.title === currentItem.title;
             // });
-            var items = newState.items.filter(function(obj){
+            var items = newState.items.filter(function (obj) {
                 return obj.title !== currentItem.title
             })
 
@@ -145,6 +137,18 @@ export class DragNDropItem extends React.Component<any, any> {
             console.log("Dragging was not successfull");
         }
 
+    }
+
+    render() {
+        this.state = JSON.stringify(this.itemData);
+        return (
+            <div className="dropbox-item" ref="item" draggable data-title={this.itemData.title}
+                onDragStart={this.handleDragStart.bind(this)}
+                dragStart={this.handleDragStart.bind(this)}
+                onDragEnd={this.handleWasDraged.bind(this)}>
+                {this.itemData.title}
+            </div>
+        )
     }
 
 }
