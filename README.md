@@ -6,13 +6,17 @@ This sample demonstrates how items can be moved from one web part to another jus
 ## Installation
 This sample is built with the [SharePoint Framework SPFX Drop 6](https://github.com/SharePoint/sp-dev-docs/wiki/Release-Notes-Drop-6). To install simply execute:
 
-```npm install```
+```
+npm install
+```
 
 This will install all npm dependencies for this sample. Once this have been finished simply execute the following command.
 
-```gulp serve```
+```
+gulp serve
+```
 
-## Additional information can be found on my blog
+Additional information can be found on my blog - [Drag and drop elements across web parts](http://www.n8d.at/blog/spfx-sample-drag-and-drop-elements-between-web-parts/)
 
 ## License
 Copyright (c) 2016 Stefan Bauer
