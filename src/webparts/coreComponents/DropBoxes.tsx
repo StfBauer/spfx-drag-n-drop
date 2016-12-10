@@ -19,15 +19,15 @@ export class DragNDropContainer extends React.Component<any, any> {
     }
 
     // Hanlde Drag over events
-    handleDragOver(event) {
+    public handleDragOver(event) {
 
         event.preventDefault();
-        event.dataTransfer.dropEffect = "move";
+        event.dataTransfer.effectAllowed = "move";
 
     }
 
     // Handle Drop event
-    handleDrop(event) {
+    public handleDrop(event) {
 
         event.preventDefault();
 
@@ -89,13 +89,13 @@ export class DragNDropItem extends React.Component<any, any> {
     }
 
     // Handle the start of the dragging action
-    handleDragStart(event) {
+    public handleDragStart(event) {
 
         let itemData = this.itemData;
 
         event.dataTransfer.setData("application/json", JSON.stringify(itemData));
-        event.dataTransfer.allowEffect = "move";
-        event.dataTransfer.dropEffect = "move";
+        event.dataTransfer.effectAllowed = "move";
+        // event.dataTransfer.dropEffect = "move";
 
 
         // remove element
@@ -112,7 +112,9 @@ export class DragNDropItem extends React.Component<any, any> {
     }
 
     // Check if drop was successful or not
-    handleWasDraged(event) {
+    public handleWasDraged(event) {
+
+        event.preventDefault();
 
         if (event.dataTransfer.dropEffect !== "none") {
 
@@ -121,9 +123,7 @@ export class DragNDropItem extends React.Component<any, any> {
                 title: this.parentComp.state.title,
                 items: this.parentComp.state.items
             }
-            // newState.items = newState.items.filter(function(obj){
-            //     return obj.title === currentItem.title;
-            // });
+
             var items = newState.items.filter(function (obj) {
                 return obj.title !== currentItem.title
             })
@@ -132,9 +132,6 @@ export class DragNDropItem extends React.Component<any, any> {
 
             this.parentComp.setState(newState);
 
-
-        } else {
-            console.log("Dragging was not successfull");
         }
 
     }
