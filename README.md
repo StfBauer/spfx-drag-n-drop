@@ -1,4 +1,7 @@
 # SPFX Sample - Drag and Drop elements between web parts
+
+![SPFx Status](https://img.shields.io/badge/SPFx-Drop%206-%23da3b01.svg)
+
 This sample demonstrates how items can be moved from one web part to another just by using the [HTML5 drag and drop API](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API) and [React](https://facebook.github.io/react/).
 
 ![Drag and drop to other web part](/assets/spfx-drag-drop.jpg?raw=true)
